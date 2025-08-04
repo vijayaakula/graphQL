@@ -1,5 +1,5 @@
 import db from './../models/index.js'
-console.log(db.User)
+
 export const resolvers ={
   Query: {
     getUsers: async () => { return db.User.findAll()},
@@ -11,7 +11,13 @@ export const resolvers ={
       const {userId} = args;
       return await db.Ratings.findAll({where: {user_id: userId}})
     }
+},
+ Mutation: {
+    createUser: async (_, args) => {
+      const { name, email } = args;
+      return await db.User.create({ name, email });
+ 
+ }
 }
-
 
 }
