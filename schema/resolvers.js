@@ -25,10 +25,10 @@ export const resolvers ={
       const { id } = args;
       return await db.User.destroy({ where: { id } });
     },
-    addRating: async (_, args) => {
-      const { userId, rating } = args;
-      return await db.Ratings.create({ user_id: userId, rating });
-    },
+    // addRating: async (_, args) => {
+    //   const { userId, rating } = args;
+    //   return await db.Ratings.create({ user_id: userId, rating });
+    // },
     // deleteRating: async (_, args) => {
     //   const { userId } = args;
     //   return await db.Ratings.destroy({ where: { user_id: userId } });
