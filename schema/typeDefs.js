@@ -22,7 +22,7 @@ export const typeDefs = gql`
     createUser(name: String!, email: String!): User
     updateUser(id: ID!, name: String!, email: String!): User
     deleteUser(id: ID!): User
-    addRating(userId: ID!, rating: String!): Ratings
+   # addRating(userId: ID!, rating: String!): Ratings
     # deleteRating(userId: ID!): Ratings
   }
 `;
