@@ -20,6 +20,10 @@ export const resolvers ={
     updateUser: async (_, args) => {
       const { id, name, email } = args;
       return await db.User.update({ name, email }, { where: { id } });
+    },
+    deleteUser: async (_, args) => {
+      const { id } = args;
+      return await db.User.destroy({ where: { id } });
     }
 }
 
