@@ -15,9 +15,12 @@ export const resolvers ={
  Mutation: {
     createUser: async (_, args) => {
       const { name, email } = args;
-      return await db.User.create({ name, email });
- 
- }
+      return await db.User.create({ name, email }); 
+    },
+    updateUser: async (_, args) => {
+      const { id, name, email } = args;
+      return await db.User.update({ name, email }, { where: { id } });
+    }
 }
 
 }
