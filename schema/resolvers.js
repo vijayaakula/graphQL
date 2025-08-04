@@ -28,6 +28,10 @@ export const resolvers ={
     addRating: async (_, args) => {
       const { userId, rating } = args;
       return await db.Ratings.create({ user_id: userId, rating });
+    },
+    deleteRating: async (_, args) => {
+      const { userId } = args;
+      return await db.Ratings.destroy({ where: { user_id: userId } });
     }
 }
 
